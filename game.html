@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Italiana&family=Poiret+One&family=Pompiere&family=Rubik+Vinyl&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/game.css">
+    <title>Start Game</title>
+</head>
+<body>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <h2 id="question">What is the answer to this question?</h2>
+        <!-- answer-choices -->
+        <div class="choice-container" id="answer_button">
+            <button class="answer" data-number="1">Choice 1</button>
+            <button class="answer" data-number="2">Choice 2</button>
+            <button class="answer" data-number="3">Choice 3</button>
+            <button class="answer" data-number="4">Choice 4</button>
+            <audio id = "correct" src="./assets/607926__robinhood76__10661-bonus-correct-answer (1).wav"></audio>
+            <audio id = "wrong" src="./assets/554053__gronkjaer__wronganswer.mp3"></audio>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
