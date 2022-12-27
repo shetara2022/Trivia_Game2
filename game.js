@@ -120,4 +120,7 @@ function end() {
       `;
     let triviaElement = document.getElementById('game');
     triviaElement.innerHTML = triviaEndHTML;
+
+    //save score in local storage
+    localStorage.setItem('mostRecentScore', score);
 }

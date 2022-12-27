@@ -1,3 +1,7 @@
+.container > * {
+  width: 100%;
+}
+
 body {
   display: flex;
   background-image: url(/assets/images/questions-background.jpeg);

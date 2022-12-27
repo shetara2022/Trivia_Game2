@@ -1,2 +1,16 @@
 $main-color: #041d18;
 $primary-color: #fff;
+
+@mixin container-style{
+    width: 100vw;
+    height: 100vh;
+    // align horizontally and vertically
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.container > * {
+    width: 100%;
+}
