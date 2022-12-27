@@ -112,10 +112,10 @@ function end() {
     let triviaEndHTML =
         `
       <h1>CONGRATULATIONS, You have completed this trivia!</h1>
-      <img id = "trophy" src = "./assets/trophy-icon.webp" alt= "trophy">
-      <h2 id = "score"> YOU SCORED: ${score} of ${MAX_QUESTIONS}</h2>
+      <h2 id = "score"> YOU SCORED: ${score} points</h2>
       <div class = "restart">
-      <a href ="index.html">RESTART</a>
+      <a class="btn" href ="index.html">PLAY AGAIN</a>
+      <a class="btn" href ="saveScore.html">SAVE</a>
       </div>
       `;
     let triviaElement = document.getElementById('game');
