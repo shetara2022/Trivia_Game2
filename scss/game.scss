@@ -71,3 +71,30 @@ h2 {
     border-radius: 20%;
     padding: 2rem;
   }
+
+
+.correct {
+    background-color: rgb(161, 226, 62);
+  }
+.incorrect {
+  background-color: red;
+}
+
+// HUD
+
+#hud {
+  display: flex;
+  justify-content: space-around;
+
+  .hud-prefix{
+    text-align: center;
+    font-size: 1rem;
+    font-family: Pompiere;
+  }
+
+  .hud-main-text {
+    text-align: center;
+    color: rgb(205, 40, 40);
+    font-family: 'Rubik Dirt', cursive;
+  }
+}

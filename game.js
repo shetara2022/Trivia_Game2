@@ -1,7 +1,9 @@
 const question = document.getElementById("question");
 // Convert choices to an array
 const choices = Array.from(document.getElementsByClassName("answer"));
-console.log(choices)
+const questionCounterText = document.getElementById('questionCounter');
+const scoreText = document.getElementById('score');
+
 let currentQuestion = {};
 // to create a delay after answering:
 let acceptingAnswers = false
@@ -17,7 +19,7 @@ fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=mul
         return res.json();
     })
     .then(loadedQuestions => {
-        console.log(loadedQuestions.results);
+        // console.log(loadedQuestions.results);
 
         // map questions to convert questions...
         questions = loadedQuestions.results.map(loadedQuestion => {
@@ -51,12 +53,18 @@ startGame = () => {
 };
 // get random question
 getNewQuestion = () => {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        end()
+    }
+    //update question counter
     questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);   //Code accessed from Stack Overflow(https://stackoverflow.com/questions/43267033/understanding-the-use-of-math-floor-when-randomly-accessing-an-array)
+    currentQuestion = availableQuestions[questionIndex];    //keeps track of which question we are on
+    question.innerText = currentQuestion.question      //innerText renders only the text content of an element - (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText)
 
     // display answer choices
+    //select the number from the dataset property for the corresponding question to show answer options
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
@@ -66,4 +74,50 @@ getNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
+};
+
+//to click on a response and mark it correct or incorrect 
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+        const classToApply =
+            selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+        if (classToApply === 'correct') {
+            incrementScore(CORRECT_BONUS);
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000);
+    });
+});
+
+//Increment score 
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
+
+//when trivia has ended 
+function end() {
+    let triviaEndHTML =
+        `
+      <h1>CONGRATULATIONS, You have completed this trivia!</h1>
+      <img id = "trophy" src = "./assets/trophy-icon.webp" alt= "trophy">
+      <h2 id = "score"> YOU SCORED: ${score} of ${MAX_QUESTIONS}</h2>
+      <div class = "restart">
+      <a href ="index.html">RESTART</a>
+      </div>
+      `;
+    let triviaElement = document.getElementById('game');
+    triviaElement.innerHTML = triviaEndHTML;
 }
