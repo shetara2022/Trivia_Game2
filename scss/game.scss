@@ -1,9 +1,17 @@
 @import 'utilities';
 
+body {
+    display: flex;
+    background-image: url(/assets/images/questions-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h2 {
     font: {
         family: 'Italiana', serif;
         size: 2rem;
+        color: $primary-color;
     }
 }
 
@@ -48,7 +56,6 @@ h2 {
     padding: 1.5rem;
     margin-bottom: 3%;
 
-
     &:hover {
         border-color: whitesmoke;
         box-shadow: 0.5rem 0.5rem rgb(50, 55, 50);
@@ -57,4 +64,9 @@ h2 {
         background-color: var(--color-primary);
         color: black;
     }
+  }
+
+  #game {
+    background-color: $primary-color;
+    border-radius: 20%;
   }

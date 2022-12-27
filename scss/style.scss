@@ -4,7 +4,7 @@
 box-sizing: border-box;
 margin: 0;
 padding: 0;
-color: $primary-color
+color: $primary-color;
 }
 
 body {
@@ -14,15 +14,18 @@ body {
     }
     background-color: $main-color;
     background-image: url(/assets/images/confetti-4-unscreen.gif);
+    
 }
 
 h1 {
     font: {
         family: 'Rubik Vinyl', cursive;
         size: 6.4rem;
+        color: $primary-color;
     }
     margin-bottom: 5rem;
     text-align: center;
+    text-shadow: 3px 3px green;
 }
 
 .container {

@@ -7,16 +7,18 @@
 
 body {
   font-family: "Poiret One", cursive;
-  font-size: 72.5%;
-  background-color: black;
+  font-size: 62.5%;
+  background-color: #041d18;
   background-image: url(/assets/images/confetti-4-unscreen.gif);
 }
 
 h1 {
   font-family: "Rubik Vinyl", cursive;
   font-size: 6.4rem;
+  font-color: #fff;
   margin-bottom: 5rem;
   text-align: center;
+  text-shadow: 3px 3px green;
 }
 
 .container {
@@ -90,5 +92,3 @@ h1 {
   margin-bottom: 3rem;
   font-size: 1rem;
 }
-
-/*# sourceMappingURL=style.css.map */

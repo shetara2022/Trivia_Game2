@@ -1,6 +1,14 @@
+body {
+  display: flex;
+  background-image: url(/assets/images/questions-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h2 {
   font-family: "Italiana", serif;
   font-size: 2rem;
+  font-color: #fff;
 }
 
 .container {
@@ -32,7 +40,7 @@ h2 {
   font-size: 1.6em;
   text-align: center;
   width: 85%;
-  background-color: black;
+  background-color: #041d18;
   color: white;
   text-decoration: none;
   border-radius: 15px;
@@ -48,4 +56,9 @@ h2 {
   cursor: pointer;
   background-color: var(--color-primary);
   color: black;
+}
+
+#game {
+  background-color: #fff;
+  border-radius: 20%;
 }
