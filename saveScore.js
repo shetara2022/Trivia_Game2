@@ -3,6 +3,7 @@ const username = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore')     //get finalscore id from html
 const mostRecentScore = localStorage.getItem('mostRecentScore')   //get recent score from local storage
+const MAX_HIGH_SCORES = 5      //MAX AMOUNT OF HIGH SCORES 
 
 //LOCAL STORAGE-things in local storage are stored as a JSON string 
 //parse to get an array object out of local storage
@@ -17,7 +18,6 @@ username.addEventListener('keyup', () => {
 });
 
 saveHighScore = (e) => {
-    // console.log("clicked save");
     e.preventDefault();
 
     //Score object 
@@ -27,6 +27,19 @@ saveHighScore = (e) => {
     };
     //push score to array
     highScores.push(score)
-    console.log(highScores);
+
+    //sort scores highest to lowest
+    highScores.sort((a, b) => {
+        return b.score - a.score     //if the b score is higher than a, b goes before a
+    })
+
+    //cut off everything after index 5 
+    highScores.splice(5)
+
+    //update high scores
+    localStorage.setItem("highScores", JSON.stringify(highScores))
+    window.location.assign("/");
 };
+
+
 
