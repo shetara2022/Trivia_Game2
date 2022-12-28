@@ -8,7 +8,7 @@ let currentQuestion = {};
 // to create a delay after answering:
 let acceptingAnswers = false
 let score = 0;
-let questionCounter = 0;
+let questionCounter = 0
 let availableQuestions = [];
 
 
@@ -16,10 +16,12 @@ let questions = [];
 // fetch questions from api (opentdb.com)
 fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=multiple")
     .then(res => {
+
         return res.json();
     })
     .then(loadedQuestions => {
         // console.log(loadedQuestions.results);
+
 
         // map questions to convert questions...
         questions = loadedQuestions.results.map(loadedQuestion => {
@@ -28,7 +30,7 @@ fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=mul
             };
 
             const answerChoices = [...loadedQuestion.incorrect_answers];
-            formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+            formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;   //randomize answer choices
             answerChoices.splice(formattedQuestion.answer - 1, 0,
                 loadedQuestion.correct_answer);
 
@@ -42,7 +44,7 @@ fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=mul
     })
 
 // How much each correct bonus is worth
-const CORRECT_BONUS = 5;
+const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
