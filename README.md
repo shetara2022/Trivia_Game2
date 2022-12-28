@@ -30,7 +30,7 @@ SASS has been implemented.
 
 ####Bugs 
 -delay screen before seeing first question
--answer containers styling 
+-answer containers need further styling 
 -loader needed 
 -JSON data contain quotes that are shown using dummy data in questions
 

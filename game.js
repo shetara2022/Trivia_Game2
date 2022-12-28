@@ -14,7 +14,7 @@ let availableQuestions = [];
 
 let questions = [];
 // fetch questions from api (opentdb.com)
-fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=multiple")
+fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=multiple")
     .then(res => {
 
         return res.json();
@@ -45,7 +45,7 @@ fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=mul
 
 // How much each correct bonus is worth
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 2;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
     questionCounter = 0;
