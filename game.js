@@ -45,7 +45,7 @@ fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=mul
 
 // How much each correct bonus is worth
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 2;
 
 startGame = () => {
     questionCounter = 0;
@@ -113,7 +113,7 @@ incrementScore = num => {
 function end() {
     let triviaEndHTML =
         `
-      <h1>CONGRATULATIONS, You have completed this trivia!</h1>
+      <h1>CONGRATULATIONS!</h1>
       <h2 id = "score"> YOU SCORED: ${score} points</h2>
       <div class = "restart">
       <a class="btn" href ="index.html">PLAY AGAIN</a>

@@ -1,7 +1,8 @@
 $main-color: #0d1211;
 $primary-color: #fff;
+$secondary-color: green;
 
-@mixin container-style{
+@mixin container {
     width: 100vw;
     height: 100vh;
     // align horizontally and vertically
@@ -10,7 +11,29 @@ $primary-color: #fff;
     align-items: center;
     max-width: 80rem;
     margin: 0 auto;
+
+    & >* {
+     width: 100%;   
+    }
 }
-.container > * {
-    width: 100%;
+
+@mixin buttons {
+    font-family: 'Italiana';
+    color: $primary-color;
+    font-size: 2em;
+    font-weight: 900;
+    top: 80%;
+    background-color: $secondary-color;
+    text-decoration: none;
+    border-radius: 60px;
+    border: 2px solid $primary-color;
+    padding: 15px 32px;
+    margin: 4px 2px;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 30px whitesmoke;
+        transform: translate(-0.1rem);
+        transition: transform 150ms;
+    }
 }

@@ -12,9 +12,10 @@ body {
         family: 'Poiret One', cursive;
         size: 62.5%;
     }
-    background-color: $main-color;
-    background-image: url(/assets/images/confetti-4-unscreen.gif);
-    
+    background: {
+        color: $main-color;
+        image: url(/assets/images/confetti-4-unscreen.gif);
+    }  
 }
 
 h1 {
@@ -25,24 +26,13 @@ h1 {
     }
     margin-bottom: 5rem;
     text-align: center;
-    text-shadow: 3px 3px green;
+    text-shadow: 4px 4px $secondary-color;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    // align horizontally and vertically
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
+   @include container
 }
 
-.container > * {
-    width: 100%;
-
-}
 
 // set direction to column
 .flex-column {
@@ -64,13 +54,7 @@ h1 {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
-
-// Image
-
+// TEACHER IMAGE
 .home-img{
     position: absolute;
     margin-top: 10rem;
@@ -86,23 +70,7 @@ h1 {
 
  // BUTTONS
 .btn {
-    color: white;
-    font-size: 1.5em;
-    font-weight: 900;
-    top: 80%;
-    background-color: green;
-    text-decoration: none;
-    border-radius: 60px;
-    border: 2px solid white;
-    padding: 15px 32px;
-    margin: 4px 2px;
-
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 30px whitesmoke;
-        transform: translate(-0.1rem);
-        transition: transform 150ms;
-    }
+   @include buttons
 }
 
 .btn[disabled]:hover {
@@ -152,7 +120,7 @@ input {
     background-color: rgb(32, 31, 30);
     padding: 3.5rem;
     border-radius: 50px 20px;
-    box-shadow: 0 0.1rem 1.4rem 0 #fff;
+    box-shadow: 0 0.1rem 1.4rem 0 $primary-color;
 }
 .high-score {
     font-size: 2.2rem;

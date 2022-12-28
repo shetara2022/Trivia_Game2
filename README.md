@@ -32,5 +32,6 @@ SASS has been implemented.
 -delay screen before seeing first question
 -answer containers styling 
 -loader needed 
+-JSON data contain quotes that are shown using dummy data in questions
 
 
