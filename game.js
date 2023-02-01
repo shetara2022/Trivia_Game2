@@ -113,12 +113,14 @@ incrementScore = num => {
 function end() {
     let triviaEndHTML =
         `
-      <h1>CONGRATULATIONS!</h1>
+    <div class="congrats_container" >
+      <h1 class="congrats_header">CONGRATULATIONS!</h1>
       <h2 id = "score"> YOU SCORED: ${score} points</h2>
       <div class = "restart">
       <a class="btn" href ="index.html">PLAY AGAIN</a>
       <a class="btn" href ="saveScore.html">SAVE</a>
       </div>
+    </div>
       `;
     let triviaElement = document.getElementById('game');
     triviaElement.innerHTML = triviaEndHTML;

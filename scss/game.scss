@@ -88,15 +88,30 @@ h2 {
 }
 
 //END SCREEN
-h1{
+
+.congrats_container {
+  width: 100vw;
+  height: 100vh;
+  // align horizontally and vertically
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+
+.congrats_header{
+  display:flex;
   font-family: 'Rubik Dirt', cursive;
-  font-size: 3rem;
+  font-size: 0.3vw;
   text-align: center;
 }
 
 .btn {
- @include buttons
+ @include buttons;
 }
+
 .restart {
   display: flex;
   justify-content: center;
