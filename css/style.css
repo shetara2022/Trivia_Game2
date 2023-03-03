@@ -27,11 +27,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 80rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 .container > * {
-  width: 100%;
+  width: 90%;
 }
 
 .flex-column {
@@ -116,10 +116,6 @@ input {
   background-color: black;
 }
 input::-moz-placeholder {
-  color: rgb(198, 239, 210);
-  text-align: center;
-}
-input:-ms-input-placeholder {
   color: rgb(198, 239, 210);
   text-align: center;
 }

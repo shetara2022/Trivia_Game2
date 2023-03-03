@@ -22,7 +22,6 @@ fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=mul
     .then(loadedQuestions => {
         // console.log(loadedQuestions.results);
 
-
         // map questions to convert questions...
         questions = loadedQuestions.results.map(loadedQuestion => {
             const formattedQuestion = {
