@@ -85,43 +85,49 @@ h2 {
 }
 
 .congrats_container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  max-width: 80rem;
-  margin: 0 auto;
+  justify-content: center;
+  height: 100vh;
 }
 
 .congrats_header {
-  display: flex;
   font-family: "Rubik Dirt", cursive;
-  font-size: 0.3vw;
-  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.btn {
-  font-family: "Italiana";
-  color: #fff;
-  font-size: 2em;
-  font-weight: 900;
-  top: 80%;
-  background-color: green;
-  text-decoration: none;
-  border-radius: 60px;
-  border: 2px solid #fff;
-  padding: 15px 32px;
-  margin: 4px 2px;
-}
-.btn:hover {
-  cursor: pointer;
-  box-shadow: 0 0 30px whitesmoke;
-  transform: translate(-0.1rem);
-  transition: transform 150ms;
+#score {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .restart {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: green;
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .congrats_header {
+    font-size: 1.5rem;
+  }
+  #score {
+    font-size: 1.25rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
 }
