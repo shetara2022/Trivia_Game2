@@ -32,6 +32,17 @@ h2 {
     flex-direction: column;
 }
 
+.choice-container{
+  width: 90%;
+  margin-left: 5%;
+  display:inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  height: auto;
+}
 
 .answer {
     font: {
@@ -44,7 +55,7 @@ h2 {
   text-decoration: none;
   border-radius: 10px;
   border: 2px solid white;
-  margin: auto;
+  margin: 0.5rem auto;
   padding: 1rem;
   margin-bottom: 3%;
   transition: all 0.3s ease;
@@ -92,6 +103,7 @@ h2 {
 
   .hud-main-text {
     text-align: center;
+    font-size: 1.5rem;
     color: rgb(205, 40, 40);
     font-family: 'Rubik Dirt', cursive;
   }
