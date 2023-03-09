@@ -27,6 +27,7 @@ fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=mul
                     .replace(/&lsquo;/g, '‘')
                     .replace(/&rsquo;/g, '’')
                     .replace(/&amp;/g, '&')
+                    .replace(/&#039;/g, "'")
                     .replace(/&oacute;/g, 'ó')
                     .replace(/&hellip/g, '...')
             };
@@ -44,6 +45,7 @@ fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=mul
                     .replace(/&lsquo;/g, '‘')
                     .replace(/&rsquo;/g, '’')
                     .replace(/&amp;/g, '&')
+                    .replace(/&#039;/g, "'")
                     .replace(/&oacute;/g, 'ó')
                     .replace(/&hellip/g, '...');
             })
