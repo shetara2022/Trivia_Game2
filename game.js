@@ -11,21 +11,24 @@ let score = 0;
 let questionCounter = 0
 let availableQuestions = [];
 
-
 let questions = [];
 // fetch questions from api (opentdb.com)
 fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=multiple")
     .then(res => {
-
         return res.json();
     })
     .then(loadedQuestions => {
-        // console.log(loadedQuestions.results);
-
         // map questions to convert questions...
         questions = loadedQuestions.results.map(loadedQuestion => {
             const formattedQuestion = {
-                question: loadedQuestion.question
+                question: loadedQuestion.question.replace(/&quot;/g, '"')
+                    .replace(/&ldquo;/g, '“')
+                    .replace(/&rdquo;/g, '”')
+                    .replace(/&lsquo;/g, '‘')
+                    .replace(/&rsquo;/g, '’')
+                    .replace(/&amp;/g, '&')
+                    .replace(/&oacute;/g, 'ó')
+                    .replace(/&hellip/g, '...')
             };
 
             const answerChoices = [...loadedQuestion.incorrect_answers];
@@ -35,12 +38,20 @@ fetch("https://opentdb.com/api.php?amount=18&category=9&difficulty=easy&type=mul
 
             // iterate through answer choices
             answerChoices.forEach((choice, index) => {
-                formattedQuestion["choice" + (index + 1)] = choice;
+                formattedQuestion["choice" + (index + 1)] = choice.replace(/&quot;/g, '"')
+                    .replace(/&ldquo;/g, '“')
+                    .replace(/&rdquo;/g, '”')
+                    .replace(/&lsquo;/g, '‘')
+                    .replace(/&rsquo;/g, '’')
+                    .replace(/&amp;/g, '&')
+                    .replace(/&oacute;/g, 'ó')
+                    .replace(/&hellip/g, '...');
             })
-            return formattedQuestion
+            return formattedQuestion;
         });
         startGame()
     })
+
 
 // How much each correct bonus is worth
 const CORRECT_BONUS = 10;
